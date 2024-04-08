@@ -10,7 +10,8 @@ import EmojiPicker from '../components/common/EmojiPicker'
 import Kanban from '../components/common/Kanban'
 import { setBoards } from '../redux/features/boardSlice'
 import { setFavouriteList } from '../redux/features/favouriteSlice'
-
+import jsPDF from 'jspdf'
+import autoTable from 'jspdf-autotable'
 let timer
 const timeout = 500
 
@@ -140,15 +141,43 @@ const Board = () => {
       alert(err)
     }
   }
+  // const doc = new jsPDF()
+  const handleexport = ()=>{
+    console.log(sections)
+    const doc = new jsPDF();
+  
+    // Convert MongoDB data to an array of arrays (2D array) for the table
+    const tableData = sections[1].tasks?.map(item => Object.values(item));
+  
+    // Add the table to the PDF
+    doc.autoTable({
+      head: [/* Array of column headers if needed */],
+      body: tableData
+    });
+  
+    // Save the PDF
+    doc.save('mongodb_data.pdf');
+       console.log("yes")
+  }
 
   return (
     <>
+     <div style={{
+        backgroundColor:"white",
+        padding:"5px",
+        color:"black",
+        width:"8%",
+        borderRadius:"5px"
+      }} onClick={handleexport}>
+      export Data
+     </div>
       <Box sx={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
         width: '100%'
       }}>
+        
         <IconButton variant='outlined' onClick={addFavourite}>
           {
             isFavourite ? (
@@ -162,6 +191,7 @@ const Board = () => {
           <DeleteOutlinedIcon />
         </IconButton>
       </Box>
+      
       <Box sx={{ padding: '10px 50px' }}>
         <Box>
           {/* emoji picker */}
@@ -194,7 +224,7 @@ const Board = () => {
         </Box>
         <Box>
           {/* Kanban board */}
-          <Kanban data={sections} boardId={boardId} />
+          <Kanban id="section" data={sections} boardId={boardId} />
         </Box>
       </Box>
     </>
