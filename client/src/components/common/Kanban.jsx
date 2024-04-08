@@ -223,6 +223,7 @@ const Kanban = props => {
               </div>
             ))
           }
+          
         </Box>
       </DragDropContext>
       <TaskModal
