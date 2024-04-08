@@ -18,6 +18,9 @@ const taskSchema = new Schema({
   },
   position: {
     type: Number
+  },
+  date:{
+    type:Date,default:Date.now()
   }
 }, schemaOptions)
 
