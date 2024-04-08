@@ -147,7 +147,7 @@ const Board = () => {
     const doc = new jsPDF();
   
     // Convert MongoDB data to an array of arrays (2D array) for the table
-    const tableData = sections[1].tasks?.map(item => Object.values(item));
+    const tableData = sections[1]?.tasks?.map(item => Object.values(item));
   
     // Add the table to the PDF
     doc.autoTable({
