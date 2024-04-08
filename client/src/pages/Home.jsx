@@ -37,7 +37,7 @@ const Home = () => {
         onClick={createBoard}
         loading={loading}
       >
-        Make a Kanban Board
+        Create a task
       </LoadingButton>
     </Box>
   )

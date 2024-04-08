@@ -27,6 +27,7 @@ const Board = () => {
 
   const boards = useSelector((state) => state.board.value);
   const favouriteList = useSelector((state) => state.favourites.value);
+  
 
   useEffect(() => {
     const getBoard = async () => {
@@ -188,30 +189,48 @@ const Board = () => {
             color: "black",
             width: "8%",
             borderRadius: "5px",
+            cursor:"pointer"
           }}
           onClick={handleexport}
         >
           Export Data
         </div>
-        <div 
-        style={{
-          backgroundColor: "white",
-          padding: "5px",
-          color: "black",
-          width: "20%",
-          borderRadius: "5px",
-        }}>
+        <div
+          style={{
+            backgroundColor: "white",
+            padding: "5px",
+            color: "black",
+            width: "20%",
+            borderRadius: "5px",
+            
+          }}
+        >
+          <label style={{
+            backgroundColor: "white",
+            padding: "5px",
+            color: "black",
+            width: "80%",
+            borderRadius: "5px",
+            marginLeft:"15px",
+           
+            
+          }}  htmlFor="endDate"> Date:</label>
           <input
-            style={{
-              backgroundColor: "white",
-              padding: "5px",
-              color: "black",
-              width: "100%",
-              borderRadius: "5px",
-            }}
-            type="text"
-            placeholder="Serch"
+            type="date"
+            id="endDate"
+           
           />
+          <br />
+          <button style={{
+            backgroundColor: "white",
+            padding: "5px",
+            color: "black",
+            width: "80%",
+            borderRadius: "5px",
+            marginLeft:"15px",
+            cursor:"pointer"
+            
+          }} >Filter</button>
         </div>
         <IconButton variant="outlined" color="error" onClick={deleteBoard}>
           <DeleteOutlinedIcon />

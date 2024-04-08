@@ -50,8 +50,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 =======
 ## Deployed Links
 
-- [TaskMaster Demo](https://taskmaasterr.netlify.app/)
-- [TaskMaster Backend](https://taskmaster-24ih.onrender.com/api/v1/)
+- [TaskMaster Demo](https://task-builder-six.vercel.app/login/)
+
 
 ## License
 
