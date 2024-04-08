@@ -114,7 +114,10 @@ const TaskModal = props => {
       BackdropComponent={Backdrop}
       BackdropProps={{ timeout: 500 }}
     >
+      
+    
       <Fade in={task !== undefined}>
+        
         <Box sx={modalStyle}>
           <Box sx={{
             display: 'flex',
@@ -122,6 +125,7 @@ const TaskModal = props => {
             justifyContent: 'flex-end',
             width: '100%'
           }}>
+
             <IconButton variant='outlined' color='error' onClick={deleteTask}>
               <DeleteOutlinedIcon />
             </IconButton>
@@ -143,11 +147,11 @@ const TaskModal = props => {
                 '& .MuiOutlinedInput-input': { padding: 0 },
                 '& .MuiOutlinedInput-notchedOutline': { border: 'unset ' },
                 '& .MuiOutlinedInput-root': { fontSize: '2.5rem', fontWeight: '700' },
-                marginBottom: '10px'
+                marginBottom: '10px',
               }}
             />
             <Typography variant='body2' fontWeight='700'>
-              {task !== undefined ? Moment(task.createdAt).format('YYYY-MM-DD') : ''}
+              {task !== undefined ? Moment(task.createdAt).format('YYYY-MM-DD') : ''} 
             </Typography>
             <Divider sx={{ margin: '1.5rem 0' }} />
             <Box
@@ -156,10 +160,12 @@ const TaskModal = props => {
                 position: 'relative',
                 height: '80%',
                 overflowX: 'hidden',
-                overflowY: 'auto'
+                overflowY: 'auto',
+                backgroundColor:"black"
               }}
             >
               <CKEditor
+            
                 editor={ClassicEditor}
                 data={content}
                 onChange={updateContent}
