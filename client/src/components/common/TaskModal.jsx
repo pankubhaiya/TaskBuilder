@@ -157,7 +157,7 @@ const TaskModal = props => {
             <Box
               ref={editorWrapperRef}
               sx={{
-                position: 'relative',
+               
                 height: '80%',
                 overflowX: 'hidden',
                 overflowY: 'auto',
