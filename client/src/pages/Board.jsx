@@ -169,7 +169,7 @@ const Board = () => {
         width:"8%",
         borderRadius:"5px"
       }} onClick={handleexport}>
-      export Data
+      Export Data
      </div>
       <Box sx={{
         display: 'flex',
@@ -224,7 +224,7 @@ const Board = () => {
         </Box>
         <Box>
           {/* Kanban board */}
-          <Kanban id="section" data={sections} boardId={boardId} />
+          <Kanban data={sections} boardId={boardId} />
         </Box>
       </Box>
     </>
